@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Tinos", serif;
+  font-size: 32px;
+  font-weight: 500;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100dvw;
+  justify-content: space-between;
+  background-color: rgba(210, 179, 179, 0.711);
+  height: 50px;
+  z-index: 1;
+}
+
+.nav a {
+  position: relative;
+  margin-right: 16px;
+  width: fit-content;
+}
+
+.nav a::before {
+  content: "";
+  width: 0%;
+  position: absolute;
+  color: white;
+  height: 2px;
+  top: 100%;
+  background: black;
+  transition: 0.2s;
+}
+
+.nav a:hover::before {
+  width: 100%;
+}
+
+#contactButton {
+  margin: 4px;
+  padding: 8px;
+  height: 80%;
+  background-color: transparent;
+  box-shadow: 1px 0px 2px;
+  color: black;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+#contactButton:hover {
+  box-shadow: 3px 3px 3px;
+}
+
+.svgButton {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .svgButton {
+    display: initial;
+    margin: 7px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 1;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+  }
+
+  .navOptions-open {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 24px 12px 0px 8px;
+    background-color: rgba(210, 179, 179, 0.711);
+    height: 100vh;
+  }
+
+  .navOptions-close {
+    display: none;
+  }
+
+  #contactButton {
+    width: 80%;
+    height: 40px;
+    background-color: rgba(236, 99, 149, 0.226);
+  }
+}

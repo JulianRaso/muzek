@@ -1,0 +1,12 @@
+.unknownPage {
+  position: relative;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 600;
+  animation: animation 15s infinite ease;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
