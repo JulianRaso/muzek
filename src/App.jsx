@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Header from "./components/heather/Header";
 import Footer from "./components/footer/Footer";
@@ -179,9 +179,9 @@ const landingPageImages = [
   "./clients/Cliente2/Client4.jpg",
 ];
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "",
+    path: "/",
     element: <LandingPage landingPageImages={landingPageImages} />,
     errorElement: <NotPageFnd />,
   },
