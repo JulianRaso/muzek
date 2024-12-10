@@ -6,12 +6,18 @@
 }
 
 .information {
+  height: 100%;
   width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 600;
 }
 
 .landingPage img {
@@ -20,16 +26,12 @@
 }
 
 .information p {
-  font-size: 24px;
-  margin: 16px;
+  margin: 8px;
   padding: 8px;
+  font-size: 1.2rem;
   word-spacing: 8px;
   letter-spacing: 1px;
   text-align: justify;
-}
-
-.companyDescription {
-  height: fit-content;
 }
 
 @media (max-width: 1000px) {
@@ -40,11 +42,11 @@
 
   .information p {
     letter-spacing: 0px;
-    font-size: clamp(13px, 2vw, 32px);
+    font-size: clamp(10px, 2vw, 32px);
   }
 
-  .information h2 {
-    font-size: medium;
+  .title {
+    font-size: clamp(10px, 2vw, 32px);
   }
 }
 

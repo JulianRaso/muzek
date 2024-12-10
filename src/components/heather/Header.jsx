@@ -32,9 +32,9 @@ export default function Header() {
           }
         >
           <a href="/">Inicio</a>
-          <a href="/services">Servicios</a>
-          <a href="/clients">Clientes</a>
-          <a href="/aboutUs">¿Quienes Somos?</a>
+          <a href="/#/services">Servicios</a>
+          <a href="/#/clients">Clientes</a>
+          <a href="/#/aboutUs">¿Quienes Somos?</a>
           <button
             id="contactButton"
             onClick={() =>

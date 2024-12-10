@@ -94,6 +94,7 @@ a {
 
   .navbar {
     position: fixed;
+    height: 100%;
     top: 0%;
     z-index: 1;
   }
@@ -103,8 +104,8 @@ a {
     flex-direction: column;
     gap: 26px;
     padding: 24px 12px 0px 8px;
-    background-color: rgba(210, 179, 179, 0.711);
-    height: 100vh;
+    background-color: rgba(223, 173, 173, 0.95);
+    height: 100%;
   }
 
   .navOptions-close {
@@ -114,6 +115,6 @@ a {
   #contactButton {
     width: 80%;
     height: 40px;
-    background-color: rgba(236, 99, 149, 0.226);
+    background-color: rgba(234, 149, 180, 0.83);
   }
 }

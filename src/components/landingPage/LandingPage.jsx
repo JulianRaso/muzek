@@ -28,9 +28,7 @@ export default function LandingPage({ landingPageImages }) {
       </div>
 
       <div className="information">
-        <div>
-          <h2>Donde tus sueños se vuelven realidad</h2>
-        </div>
+        <div className="title">Donde tus sueños se vuelven realidad</div>
         <div className="companyDescription">
           <p>
             Sabemos que cada evento cuenta una historia, y estamos aquí para
