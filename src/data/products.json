@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Especialista en Sonido",
+    "image": ["./producs/soundProfesional/soundProf.jpg"],
+    "description": "Contamos con especialistas en sonido durante todo el evento para garantizar un sonido claro sin distorciones."
+  },
+  {
+    "title": "Sonido",
+    "image": [
+      "./producs/audioEquipment/arraySpeakers.png",
+      "./producs/audioEquipment/soundSystem.png",
+      "./producs/audioEquipment/soundSystem2.png",
+      "./producs/audioEquipment/floorAmplifier.png"
+    ],
+    "description": "El audio es un elemento clave en todo evento, por ello, contamos con la ultima generacion de equipos de sonido del mercado para ofrecerte lo mejor."
+  },
+  {
+    "title": "Iluminacion",
+    "image": [
+      "./producs/lights/light1.png",
+      "./producs/lights/light2.png",
+      "./producs/lights/light3.png",
+      "./producs/lights/light4.png"
+    ],
+    "description": "Contamos con los ultimos equipos de iluminacion para lograr que cada evento tenga recuerdos unicos."
+  },
+  {
+    "title": "Escenarios",
+    "image": [
+      "./producs/stageEquipment/stageEstructure.png",
+      "./producs/stageEquipment/stage2.png",
+      "./producs/stageEquipment/stage3.png"
+    ],
+    "description": "Sabemos que la estructura del lugar no siempre acompaña. En Muzek, contamos con una amplia variedad de estructuras para mejorar los efectos de Sonido e Iluminacion."
+  }
+]

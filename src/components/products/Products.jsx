@@ -37,15 +37,17 @@ export default function Products({ products, landingImages }) {
         </p>
       </div>
       <div className="servicesContainer">
-        {products.map((value, index) => (
-          <ServicesEquipment
-            key={index}
-            title={value.title}
-            img={value.image}
-            imgDescription={"Equipo de " + value.title}
-            description={value.description}
-          />
-        ))}
+        <div className="servicesCards">
+          {products.map((value, index) => (
+            <ServicesEquipment
+              key={index}
+              title={value.title}
+              img={value.image}
+              imgDescription={"Equipo de " + value.title}
+              description={value.description}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
