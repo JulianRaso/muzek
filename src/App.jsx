@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Header from "./components/heather/Header";
@@ -207,9 +208,15 @@ const router = createHashRouter([
 ]);
 
 export default function App() {
+  const [navbarStatus, setNavbarStatus] = useState(false);
+
+  function handleNavbar() {
+    setNavbarStatus(!navbarStatus);
+  }
+
   return (
     <div className="container">
-      <Header />
+      <Header navbarStatus={navbarStatus} handleNavbar={handleNavbar} />
       <div className="appBody">
         <RouterProvider router={router} />
       </div>

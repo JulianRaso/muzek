@@ -1,11 +1,6 @@
 .footer {
-  position: absolute;
-  bottom: 0%;
-  width: 100vw;
+  width: 100dvw;
   background-color: rgba(210, 179, 179, 0.711);
   text-align: center;
-}
-
-.footer p {
   font-size: small;
 }

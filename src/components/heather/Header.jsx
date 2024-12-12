@@ -1,17 +1,16 @@
-import { useState } from "react";
 import "./Header.css";
+import PropTypes from "prop-types";
 
-export default function Header() {
-  const [navbarStatus, setNavbarStatus] = useState(false);
+Header.propTypes = {
+  navbarStatus: PropTypes.bool,
+  handleNavbar: PropTypes.func,
+};
 
-  function handleNavbar() {
-    setNavbarStatus(!navbarStatus);
-  }
-
+export default function Header({ navbarStatus, handleNavbar }) {
   return (
     <div className="header">
       <a href="/" className="logo">
-        Muzek
+        MVZEK
       </a>
       <nav className="navbar">
         <svg
@@ -31,10 +30,18 @@ export default function Header() {
             navbarStatus ? "nav navOptions-open" : "nav navOptions-close"
           }
         >
-          <a href="/">Inicio</a>
-          <a href="/#/services">Servicios</a>
-          <a href="/#/clients">Clientes</a>
-          <a href="/#/aboutUs">¿Quienes Somos?</a>
+          <a href="/#/" onClick={() => handleNavbar()}>
+            Inicio
+          </a>
+          <a href="/#/services" onClick={() => handleNavbar()}>
+            Servicios
+          </a>
+          <a href="/#/clients" onClick={() => handleNavbar()}>
+            Clientes
+          </a>
+          <a href="/#/aboutUs" onClick={() => handleNavbar()}>
+            ¿Quienes Somos?
+          </a>
           <button
             id="contactButton"
             onClick={() =>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./EventsCard.css";
 
@@ -11,58 +11,37 @@ export default function EventsCard({ object }) {
   let imgQuantity = eventData.image?.length - 1;
   const [imgPosition, setImgPosition] = useState(Math.floor(Math.random() * 4));
 
-  function handlePosition(position) {
-    if (position == "next") {
-      {
-        imgPosition < imgQuantity ? setImgPosition(imgPosition + 1) : null;
-        imgPosition == imgQuantity ? setImgPosition(0) : null;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (imgPosition <= imgQuantity - 1) {
+        setImgPosition(() => imgPosition + 1);
+      } else {
+        setImgPosition(0);
       }
-    }
-    if (position == "previous") {
-      {
-        imgPosition > 0 ? setImgPosition(imgPosition - 1) : null;
-        imgPosition == 0 ? setImgPosition(imgQuantity) : null;
-      }
-    }
-  }
+    }, 2500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [imgPosition, setImgPosition, imgQuantity]);
 
   return (
     <div className="eventCard">
       <h2 className="title">{eventData.title}</h2>
-      <div className="imageContainer">
-        <button className="btn-left" onClick={() => handlePosition("previous")}>
-          <img
-            style={{
-              width: "25px",
-              height: "30px",
-              rotate: "180deg",
-            }}
-            src="https://img.icons8.com/?size=100&id=11686&format=png&color=ffffff"
-            alt="arrow--v1"
-          />
-        </button>
+      <div className="cardImage">
         <img src={eventData?.image[imgPosition]} alt="Event Image" />
-        <button className="btn-right" onClick={() => handlePosition("next")}>
-          <img
-            style={{
-              width: "25px",
-              height: "30px",
-            }}
-            src="https://img.icons8.com/?size=100&id=11686&format=png&color=ffffff"
-            alt="arrow--v1"
-          />
-        </button>
       </div>
-      <div className="imageAmount">
+      <div className="imageControllers">
         {object.image.map((_, i) => (
           <button
             key={i}
-            className={i == imgPosition ? "fill" : ""}
+            style={
+              i == imgPosition ? { backgroundColor: "rgb(224,233,242)" } : {}
+            }
             onClick={() => setImgPosition(i)}
           ></button>
         ))}
       </div>
-      <p>{eventData.description}</p>
+      <span>{eventData.description}</span>
     </div>
   );
 }

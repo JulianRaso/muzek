@@ -5,6 +5,14 @@ a {
   color: black;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  width: 100dvw;
+  justify-content: space-between;
+  background-color: rgba(210, 179, 179, 0.711);
+}
+
 .logo {
   font-family: "Tinos", serif;
   font-size: 32px;
@@ -12,17 +20,6 @@ a {
   position: relative;
   left: 50%;
   transform: translate(-50%);
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100dvw;
-  justify-content: space-between;
-  background-color: rgba(210, 179, 179, 0.711);
-  height: 50px;
-  z-index: 1;
 }
 
 .nav a {
@@ -50,7 +47,7 @@ a {
   margin: 4px;
   padding: 8px;
   height: 80%;
-  background-color: transparent;
+  background-color: rgba(234, 149, 180, 0.83);
   box-shadow: 1px 0px 2px;
   color: black;
   border-radius: 4px;
@@ -71,11 +68,11 @@ a {
     flex-direction: row-reverse;
     justify-content: start;
     align-items: center;
-    width: 100vw;
+    width: 100dvw;
   }
 
   .svgButton {
-    display: initial;
+    display: block;
     margin: 7px;
   }
 
@@ -85,27 +82,15 @@ a {
     transform: translate(-50%);
   }
 
-  .header {
-    position: fixed;
-    width: 100%;
-    top: 0%;
-    z-index: 1;
-  }
-
-  .navbar {
-    position: fixed;
-    height: 100%;
-    top: 0%;
-    z-index: 1;
-  }
-
   .navOptions-open {
     display: flex;
     flex-direction: column;
+    position: absolute;
     gap: 26px;
     padding: 24px 12px 0px 8px;
     background-color: rgba(223, 173, 173, 0.95);
     height: 100%;
+    z-index: 1;
   }
 
   .navOptions-close {
@@ -115,6 +100,5 @@ a {
   #contactButton {
     width: 80%;
     height: 40px;
-    background-color: rgba(234, 149, 180, 0.83);
   }
 }

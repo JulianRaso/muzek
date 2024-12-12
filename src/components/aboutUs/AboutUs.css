@@ -5,3 +5,9 @@ img {
 .aboutUs {
   height: 60%;
 }
+
+@media (max-width: 1000px) {
+  .aboutUs {
+    height: 40%;
+  }
+}
