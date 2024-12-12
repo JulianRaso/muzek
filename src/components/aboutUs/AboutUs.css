@@ -1,13 +1,11 @@
-img {
-  object-fit: cover;
-}
-
 .aboutUs {
+  object-fit: cover;
   height: 60%;
 }
 
 @media (max-width: 1000px) {
   .aboutUs {
-    height: 40%;
+    padding: 8px;
+    height: auto;
   }
 }
