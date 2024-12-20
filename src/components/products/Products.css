@@ -30,12 +30,6 @@
   text-align: justify;
 }
 
-.servicesContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .servicesCard {
   display: flex;
   align-items: start;
@@ -46,7 +40,6 @@
   border: 1px solid black;
   background-image: linear-gradient(#f8adad, #d39595, #a37373);
   height: 200px;
-  width: fit-content;
   text-align: justify;
 }
 
@@ -76,6 +69,8 @@
 .servicesCards {
   display: flex;
   overflow-y: hidden;
+  width: 100%;
+  justify-content: space-between;
 }
 
 @media (max-width: 1000px) {

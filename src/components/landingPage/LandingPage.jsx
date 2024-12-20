@@ -1,30 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import "./LandingPage.css";
+import useEffectImageChanger from "../../hook/useEffectImageChanger";
 
 LandingPage.propTypes = {
   landingPageImages: PropTypes.array,
 };
 
 export default function LandingPage({ landingPageImages }) {
-  const images = landingPageImages;
   const [slideNumber, setSlideNumber] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (slideNumber < images.length - 1) {
-        setSlideNumber(() => slideNumber + 1);
-      } else {
-        setSlideNumber(0);
-      }
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [slideNumber, setSlideNumber, images]);
+  useEffectImageChanger(
+    slideNumber,
+    landingPageImages.length,
+    setSlideNumber,
+    2500
+  );
 
   return (
     <div className="landingPage">
       <div className="leftContainer">
-        <img src={images[slideNumber]} alt="Eventos" />
+        <img src={landingPageImages[slideNumber]} alt="Eventos" />
       </div>
 
       <div className="information">

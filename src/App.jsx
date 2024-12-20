@@ -55,7 +55,7 @@ export default function App() {
   return (
     <div className="container">
       <Header navbarStatus={navbarStatus} handleNavbar={handleNavbar} />
-      <div className="appBody">
+      <div className="appBody" onClick={navbarStatus ? handleNavbar : ""}>
         <RouterProvider router={router} />
       </div>
       <Footer />

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import "./EventsCard.css";
+import useEffectImageChanger from "../../hook/useEffectImageChanger";
 
 EventsCard.propTypes = {
   object: PropTypes.object,
@@ -8,21 +9,10 @@ EventsCard.propTypes = {
 
 export default function EventsCard({ object }) {
   const [eventData] = useState(object);
-  let imgQuantity = eventData.image?.length - 1;
+  let imgQuantity = eventData.image?.length;
   const [imgPosition, setImgPosition] = useState(Math.floor(Math.random() * 4));
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (imgPosition <= imgQuantity - 1) {
-        setImgPosition(() => imgPosition + 1);
-      } else {
-        setImgPosition(0);
-      }
-    }, 2500);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [imgPosition, setImgPosition, imgQuantity]);
+  useEffectImageChanger(imgPosition, imgQuantity, setImgPosition, 2500);
 
   return (
     <div className="eventCard">

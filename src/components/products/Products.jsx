@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Products.css";
 import PropTypes from "prop-types";
+import useEffectImageChanger from "../../hook/useEffectImageChanger";
 
 Products.propTypes = {
   products: PropTypes.array,
@@ -12,17 +13,7 @@ Products.propTypes = {
 export default function Products({ products, landingImages }) {
   const [currentPst, setCurrentPst] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentPst != landingImages.length - 1) {
-        setCurrentPst(() => currentPst + 1);
-      }
-      if (currentPst == landingImages.length - 1) {
-        setCurrentPst(0);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentPst, landingImages]);
+  useEffectImageChanger(currentPst, landingImages.length, setCurrentPst, 3000);
 
   return (
     <div className="products">
@@ -36,18 +27,16 @@ export default function Products({ products, landingImages }) {
           transformando ideas en experiencias inolvidables.
         </p>
       </div>
-      <div className="servicesContainer">
-        <div className="servicesCards">
-          {products.map((value, index) => (
-            <ServicesEquipment
-              key={index}
-              title={value.title}
-              img={value.image}
-              imgDescription={"Equipo de " + value.title}
-              description={value.description}
-            />
-          ))}
-        </div>
+      <div className="servicesCards">
+        {products.map((value, index) => (
+          <ServicesEquipment
+            key={index}
+            title={value.title}
+            img={value.image}
+            imgDescription={"Equipo de " + value.title}
+            description={value.description}
+          />
+        ))}
       </div>
     </div>
   );
@@ -61,20 +50,9 @@ ServicesEquipment.propTypes = {
 };
 
 function ServicesEquipment({ title, img, imgDescription, description }) {
-  const image = img;
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentSlide != image.length - 1) {
-        setCurrentSlide(() => currentSlide + 1);
-      }
-      if (currentSlide == image.length - 1) {
-        setCurrentSlide(0);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentSlide, image]);
+  useEffectImageChanger(currentSlide, img.length, setCurrentSlide, 3000);
 
   return (
     <div className="servicesCard">
